@@ -28,8 +28,8 @@ export interface Options {
 export type EventSourceOnly = Omit<Options, 'eventSourceOptions'> & EventSourceInit;
 
 export type HeartbeatOptions = {
-  message?: "ping" | "pong" | string | (() => string);
-  returnMessage?: "ping" | "pong" | string;
+  message?: WebSocketMessage | (() => WebSocketMessage);
+  returnMessage?: WebSocketMessage;
   timeout?: number;
   interval?: number;
 };
